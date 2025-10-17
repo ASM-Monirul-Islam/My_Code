@@ -115,7 +115,7 @@ Goal: Mastering efficient coding using STL in real-world problem-solving.
 🏫 World University of Bangladesh  
 📍 Dhaka, Bangladesh  
 
-🔗 [LinkedIn](#https://www.linkedin.com/in/a-s-m-monirul-islam-b2b88b308?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app) • [GitHub](#https://github.com/ASM-Monirul-Islam) • [Portfolio](#https://asm-monirul-islam.github.io/My-Portfoio/) • [WhatsApp](#https://wa.me/qr/J2N5LUIYZRV2F1)
+🔗 [LinkedIn](https://www.linkedin.com/in/a-s-m-monirul-islam-b2b88b308?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app) • [GitHub](https://github.com/ASM-Monirul-Islam) • [Portfolio](https://asm-monirul-islam.github.io/My-Portfoio/) • [WhatsApp](https://wa.me/qr/J2N5LUIYZRV2F1)
 
 ---
 
