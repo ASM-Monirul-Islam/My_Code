@@ -1,3 +1,23 @@
+/*
+Name: Generate All Subsets (Power Set) Using Backtracking
+Description:
+This C++ program generates all possible subsets (the power set) of a given array of 
+integers using backtracking. It explores every combination by recursively including 
+or excluding each element and stores the results in a vector of vectors. The subsets 
+are then printed in a JSON-like format.
+
+Time Complexity: O(n × 2ⁿ)
+Space Complexity: O(n × 2ⁿ)
+
+Input:
+4
+1 2 3 4
+
+Output:
+[[],[1],[1,2],[1,2,3],[1,2,3,4],[1,2,4],[1,3],[1,3,4],[1,4],[2],[2,3],[2,3,4],[2,4],[3],[3,4],[4]]
+*/
+
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -40,3 +60,4 @@ int main() {
 	cout<<"]";
 	return 0;
 }
+
