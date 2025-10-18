@@ -24,6 +24,7 @@ using namespace std;
 void backtrack(vector<int>&nums, int start, vector<vector<int>>&solution, vector<int>&current) {
 	solution.push_back(current);
 	for(int i=start; i<nums.size(); i++) {
+		if (i > start && nums[i] == nums[i - 1]) continue;
 		current.push_back(nums[i]);
 		backtrack(nums, i+1, solution, current);
 		current.pop_back();
@@ -31,6 +32,7 @@ void backtrack(vector<int>&nums, int start, vector<vector<int>>&solution, vector
 }
 
 vector<vector<int>>Subset(vector<int>&nums) {
+	sort(nums.begin(), nums.end());
 	vector<vector<int>>solution;
 	vector<int>current;
 	backtrack(nums, 0, solution, current);
