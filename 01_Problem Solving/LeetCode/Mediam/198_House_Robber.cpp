@@ -1,6 +1,3 @@
-#include<bits/stdc++.h>
-using namespace std;
-
 class Solution {
 public:
     int robbery(int n, vector<int>&nums, vector<int>&dp) {
@@ -15,16 +12,3 @@ public:
         return robbery(n-1, nums, dp);
     }
 };
-
-int main() {
-    Solution obj;
-    int n;
-    cin>>n;
-    vector<int>nums(n);
-    for(int i=0; i<n; i++) {
-        cin>>nums[i];
-    }
-    int robbed = obj.rob(nums);
-    cout<<robbed<<endl;
-    return 0;
-}
