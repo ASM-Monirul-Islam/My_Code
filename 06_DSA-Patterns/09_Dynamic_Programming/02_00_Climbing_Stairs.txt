@@ -1,0 +1,26 @@
+/**
+
+Problem: Climbing Stairs
+
+You are given a staircase with n steps, and you can climb either 1 or 2 steps at a time.
+
+Your task is to determine how many distinct ways there are to reach the top of the staircase.
+
+This is a classic Dynamic Programming problem similar to the Fibonacci sequence.
+
+Approach (Top-Down with Memoization):
+
+Starting from step 0, recursively explore two choices — climbing 1 step or 2 steps —
+
+until reaching or exceeding the target step n.
+
+The total number of ways to reach the top is the sum of these two possibilities.
+
+To optimize performance, intermediate results are stored in a dp array to avoid recalculating
+
+overlapping subproblems.
+
+Time Complexity: O(n) — each step is computed once.
+
+Space Complexity: O(n) — due to the dp array and recursion stack.
+*/
