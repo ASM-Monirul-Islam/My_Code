@@ -1,30 +1,29 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-class Solution {
-public:
-    int robbery(int n, vector<int>&nums, vector<int>&dp) {
-        if(n==0) return nums[0];
-        if(n==1) return max(nums[0], nums[1]);
-        if(dp[n] != -1) return dp[n];
-        return dp[n] = max(nums[n]+robbery(n-2, nums, dp), robbery(n-1, nums, dp));
+int solve(vector<int>&v, int n, int k) {
+    priority_queue<int>p;
+    for(int i=0; i<k; i++) {
+        p.push(v[i]);
     }
-    int rob(vector<int>& nums) {
-        int n = nums.size();
-        vector<int>dp(n, -1);
-        return robbery(n-1, nums, dp);
+    for(int i=k; i<n; i++) {
+        if(p.top()>v[i]) {
+            p.pop();
+            p.push(v[i]);
+        }
     }
-};
+    return p.top();
+}
 
 int main() {
-    Solution obj;
-    int n;
+    int n, k;
     cin>>n;
-    vector<int>nums(n);
+    vector<int>v(n);
     for(int i=0; i<n; i++) {
-        cin>>nums[i];
+        cin>>v[i];
     }
-    int robbed = obj.rob(nums);
-    cout<<robbed<<endl;
+    cin>>k;
+    int ans = solve(v, n, k);
+    cout<<ans<<endl;
     return 0;
 }
