@@ -1,6 +1,3 @@
-#include<bits/stdc++.h>
-using namespace std;
-
 class Solution {
 public:
     int numOfSubarrays(vector<int>& arr, int k, int threshold) {
@@ -18,18 +15,3 @@ public:
         return count;
     }
 };
-
-int main() {
-    Solution obj;
-    int n, k, threshold;
-    cin>>n;
-    vector<int>arr(n);
-    for(int i=0; i<n; i++) {
-        cin>>arr[i];
-    }
-    cin>>k;
-    cin>>threshold;
-    int ans = obj.numOfSubarrays(arr, k, threshold);
-    cout<<ans<<endl;
-    return 0;
-}
