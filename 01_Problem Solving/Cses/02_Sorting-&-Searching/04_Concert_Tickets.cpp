@@ -14,7 +14,7 @@ t(1-m) = maximum price for each customer in the order they arrive
 vector<long long>Solution(vector<long long>&h, vector<long long>&t) {
 	vector<long long>ans;
 	multiset<int>s(h.begin(), h.end());
-	int n=h.size(), m=t.size(), i=0;
+	long long n=h.size(), m=t.size(), i=0;
 	for(auto price:t) {
 		auto it = s.upper_bound(price);
 		if(it==s.begin()) {

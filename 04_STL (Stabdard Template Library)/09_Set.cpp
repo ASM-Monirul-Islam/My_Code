@@ -63,5 +63,17 @@ int main() {
 	}
 	cout<<endl;
 	//--------------------------------------------------------------
+
+	// 8. *next(it) and *prev(it) - finds the next and the previous element
+	// 								of an specific element;
+	set<int>s2={1,2,3,4,5,6,7,8,9};
+	auto it2 = s2.find(4);
+	cout<<*prev(it2)<<endl; //3
+	cout<<*next(it2)<<endl; //5
+
+	// 9. *s.begin() - returns the smallest element
+	cout<<*s2.begin()<<endl; //1
+	// 10. *s.rbegin() - returns the largetst element
+	cout<<*s2.rbegin()<<endl; //9
 	return 0;
 }

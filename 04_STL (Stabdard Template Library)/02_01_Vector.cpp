@@ -98,5 +98,22 @@ int main() {
 
 	// 24. find(v.begin(), v.end(), target)-v.begin(); - returns the location
 	cout<<find(v9.begin(), v9.end(), 5)-v9.begin()<<endl; //5
+
+	// 25. upper_bound(value); - first_element > value
+	vector<int>v10 ={1,2,2,4,2,6,2};
+	auto it = upper_bound(v10.begin(), v10.end(), 4);
+	if(it!=v10.end()) {
+		cout<<*it<<endl; //6
+	}
+
+	// 26. lower_bound(value); - first_element >= value
+	auto it2 = lower_bound(v10.begin(), v10.end(), 4);
+	if(it2!=v10.end()) {
+		cout<<*it2<<endl; //4
+	}
+
+	// 27. *v.begin() and *v.rbegin() - returns the first and last element of the vector
+	vector<int>v11={1,2,3,4,5,6,7,8};
+	cout<<*v11.begin()<<" "<<*v11.rbegin()<<endl; //1 8
 	return 0;
 }

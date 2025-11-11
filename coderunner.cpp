@@ -1,7 +1,11 @@
-/*
-Beecrowd (A_S_M_Monirul_Islam_65D) - 123
-CodeForces (Monirul_65D) - 119
-LeetCode (ASM_Monirul_Islam) - 47
-Cses (monirul_islam) - 7
-GeeksForGeeks (monirul014ntb7) - 8
-*/
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+
+	vector<int>v={1,2,3,4,5,6};
+	cout<<*v.begin()<<" "<<*v.rbegin()<<endl;
+	return 0;
+}
