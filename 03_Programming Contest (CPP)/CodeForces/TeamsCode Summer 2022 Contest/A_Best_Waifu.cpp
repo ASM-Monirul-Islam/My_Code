@@ -5,12 +5,8 @@ int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 
-	int n;
-	cin>>n;
-	while(n--) {
-		string s;
-		cin>>s;
-		cout<<s.size()<<" "<<strlen(s.c_str())<<endl;
-	}
+	int t;
+	cin>>t;
+	cout<<"rem"<<endl;
 	return 0;
 }
