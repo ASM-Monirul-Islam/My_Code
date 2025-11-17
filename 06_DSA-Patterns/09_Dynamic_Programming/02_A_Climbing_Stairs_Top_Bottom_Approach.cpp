@@ -4,16 +4,15 @@ using namespace std;
 class Solution {
 	public:
 
-	int count(int i, int  n, vector<int>&dp) {
-		if(i==n) return 1;
-		if(i>n) return 0;
-		if(dp[i] != -1) return dp[i];
-		return dp[i] = count(i+1, n, dp)+count(i+2, n, dp);
+	int count(int n, vector<int>&dp) {
+		if(n<=2) return n;
+		if(dp[n] != -1) return dp[n];
+		return dp[n] = count(n-1, dp) + count(n-2, dp);
 	}
 
 	int climbing_ways(int n) {
-		vector<int>dp(n+2, -1);
-		return count(0, n, dp);
+		vector<int>dp(n+1, -1);
+		return count(n, dp);
 	}
 };
 
