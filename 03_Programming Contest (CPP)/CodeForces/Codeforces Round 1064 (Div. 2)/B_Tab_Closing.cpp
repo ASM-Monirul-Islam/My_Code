@@ -16,12 +16,11 @@ int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 
-	int n;
-	cin>>n;
-	vector<ll>songs(n);
-	for (int i=0; i<n; i++) {
-		cin>>songs[i];
+	int t, a, b, n;
+	cin>>t;
+	while(t--) {
+		cin>>a>>b>>n;
+		cout<<((a==b) or (a/n>=b) ? 1 : 2) <<endl;
 	}
-	
 	return 0;
 }
