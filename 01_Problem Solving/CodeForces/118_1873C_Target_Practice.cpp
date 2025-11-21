@@ -17,19 +17,23 @@ int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 
-	int n, t;
-	string s;
-	cin>>n>>t;
-	cin.ignore();
-	cin>>s;
+	int t;
+	cin>>t;
 	while(t--) {
-		for(int i=1; i<s.size(); i++) {
-			if(s[i]=='G' and s[i-1]=='B') {
-				swap(s[i], s[i-1]);
-				i++;
+		vector<string>target(10);
+		for(int i=0; i<10; i++) {
+			cin>>target[i];
+		}
+		int ring, score=0;
+		for(int i=0; i<10; i++) {
+			for(int j=0; j<10; j++) {
+				if(target[i][j]=='X') {
+					ring = min({i, j, 9-i, 9-j});
+					score+=(ring+1);
+				}
 			}
 		}
+		cout<<score<<endl;
 	}
-	cout<<s<<endl;
 	return 0;
 }

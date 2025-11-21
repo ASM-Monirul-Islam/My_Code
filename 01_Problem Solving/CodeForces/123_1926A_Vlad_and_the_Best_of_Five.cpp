@@ -17,19 +17,15 @@ int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 
-	int n, t;
-	string s;
-	cin>>n>>t;
+	int n;
+	cin>>n;
 	cin.ignore();
-	cin>>s;
-	while(t--) {
-		for(int i=1; i<s.size(); i++) {
-			if(s[i]=='G' and s[i-1]=='B') {
-				swap(s[i], s[i-1]);
-				i++;
-			}
-		}
+	while(n--) {
+		string s;
+		cin>>s;
+		int a = count(s.begin(), s.end(), 'A');
+		int b = count(s.begin(), s.end(), 'B');
+		cout<<(a>b? "A" : "B")<<endl;
 	}
-	cout<<s<<endl;
 	return 0;
 }

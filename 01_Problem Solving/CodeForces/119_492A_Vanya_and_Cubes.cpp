@@ -16,20 +16,14 @@ using namespace std;
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
-
-	int n, t;
-	string s;
-	cin>>n>>t;
-	cin.ignore();
-	cin>>s;
-	while(t--) {
-		for(int i=1; i<s.size(); i++) {
-			if(s[i]=='G' and s[i-1]=='B') {
-				swap(s[i], s[i-1]);
-				i++;
-			}
-		}
+	int n;
+	cin>>n;
+	int cube=0, totalCube=0, i=0;
+	while(totalCube<=n) {
+		i++;
+		cube+=i;
+		totalCube+=cube;
 	}
-	cout<<s<<endl;
+	cout<<i-1<<endl;
 	return 0;
 }

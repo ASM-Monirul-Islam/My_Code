@@ -17,19 +17,17 @@ int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 
-	int n, t;
-	string s;
-	cin>>n>>t;
-	cin.ignore();
-	cin>>s;
+	int t, n;
+	cin>>t;
 	while(t--) {
-		for(int i=1; i<s.size(); i++) {
-			if(s[i]=='G' and s[i-1]=='B') {
-				swap(s[i], s[i-1]);
-				i++;
-			}
+		cin>>n;
+		vector<int>arr(n);
+		for (int i=0; i<n; i++) {
+			cin>>arr[i];
 		}
+		int minNum = *min_element(arr.begin(), arr.end());
+		int maxNum = *max_element(arr.begin(), arr.end());
+		cout<<maxNum-minNum<<endl;
 	}
-	cout<<s<<endl;
 	return 0;
 }

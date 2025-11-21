@@ -17,19 +17,21 @@ int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 
-	int n, t;
-	string s;
-	cin>>n>>t;
-	cin.ignore();
-	cin>>s;
+	int t, n;
+	cin>>t;
 	while(t--) {
-		for(int i=1; i<s.size(); i++) {
-			if(s[i]=='G' and s[i-1]=='B') {
-				swap(s[i], s[i-1]);
-				i++;
-			}
+		cin>>n;
+		vector<int>arr(n);
+		for (int i=0; i<n; i++) {
+			cin>>arr[i];
 		}
+		sort(arr.begin(), arr.end());
+		arr[0]++;
+		int prod=1;
+		for(int i=0; i<n; i++) {
+			prod*=arr[i];
+		}
+		cout<<prod<<endl;
 	}
-	cout<<s<<endl;
 	return 0;
 }

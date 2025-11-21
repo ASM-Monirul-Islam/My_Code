@@ -17,19 +17,23 @@ int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 
-	int n, t;
-	string s;
-	cin>>n>>t;
-	cin.ignore();
-	cin>>s;
+	int t, n;
+	cin>>t;
 	while(t--) {
-		for(int i=1; i<s.size(); i++) {
-			if(s[i]=='G' and s[i-1]=='B') {
-				swap(s[i], s[i-1]);
-				i++;
-			}
+		cin>>n;
+		cin.ignore();
+		string s;
+		unordered_map<char, int>freq;
+		cin>>s;
+		for(char ch: s) {
+			freq[ch]++;
 		}
+		int total=0;
+		for(auto &i: freq) {
+			total+=i.second;
+		}
+		total+=freq.size();
+		cout<<total<<endl;
 	}
-	cout<<s<<endl;
 	return 0;
 }

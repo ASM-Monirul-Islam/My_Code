@@ -13,23 +13,16 @@ using namespace std;
 #define min_heap_pair pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>
 #define vout(x) for(int i=0; i<x.size(); i++) cout << x[i] << " ";
 
+
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 
-	int n, t;
-	string s;
-	cin>>n>>t;
-	cin.ignore();
-	cin>>s;
+	int t, n;
+	cin>>t;
 	while(t--) {
-		for(int i=1; i<s.size(); i++) {
-			if(s[i]=='G' and s[i-1]=='B') {
-				swap(s[i], s[i-1]);
-				i++;
-			}
-		}
+		cin>>n;
+		cout<<n/2<<endl;
 	}
-	cout<<s<<endl;
 	return 0;
 }

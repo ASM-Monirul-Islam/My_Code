@@ -17,19 +17,12 @@ int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 
-	int n, t;
-	string s;
-	cin>>n>>t;
-	cin.ignore();
-	cin>>s;
+	int t, h, m;
+	cin>>t;
 	while(t--) {
-		for(int i=1; i<s.size(); i++) {
-			if(s[i]=='G' and s[i-1]=='B') {
-				swap(s[i], s[i-1]);
-				i++;
-			}
-		}
+		cin>>h>>m;
+		int ans = ((23-h)*60)+(60-m);
+		cout<<ans<<endl;
 	}
-	cout<<s<<endl;
 	return 0;
 }

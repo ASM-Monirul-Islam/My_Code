@@ -17,19 +17,17 @@ int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 
-	int n, t;
-	string s;
-	cin>>n>>t;
-	cin.ignore();
-	cin>>s;
+	int t, n;
+	cin>>t;
 	while(t--) {
-		for(int i=1; i<s.size(); i++) {
-			if(s[i]=='G' and s[i-1]=='B') {
-				swap(s[i], s[i-1]);
-				i++;
-			}
+		cin>>n;
+		int digit=n%10, digit_number=0;
+		while(n>0) {
+			digit_number++;
+			n/=10;
 		}
+		int ans = ((digit-1)*10)+(digit_number*(digit_number+1)/2);
+		cout<<ans<<endl;
 	}
-	cout<<s<<endl;
 	return 0;
 }
