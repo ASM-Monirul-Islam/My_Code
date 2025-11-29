@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+#define MOD 1000000007
 #define pii pair<int, int>
 #define eb emplace_back
 #define F first
@@ -12,24 +13,24 @@ using namespace std;
 #define min_heap_pair pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>
 #define vout(x) for(int i=0; i<x.size(); i++) cout << x[i] << " ";
 
-int solution(int n, vector<int>&dp) {
-	if(n==0) return 1;
-	if(n<0) return 0;
-	if(dp[n]!=-1) return dp[n];
-	return dp[n] = solution(n-1, dp) + solution(n-2, dp) + solution(n-3, dp);
-}
-
-int ways(int n) {
-	vector<int>dp(n+1, -1);
-	return solution(n, dp);
-}
-
 int main() {
-	ios::sync_with_stdio(false);
-	cin.tie(nullptr);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
-	int n;
-	cin>>n;
-	cout<<ways(n)<<endl;
-	return 0;
+    int n;
+    cin>>n;
+    vector<int>arr(n);
+    for (int i=0; i<n; i++) {
+        cin>>arr[i];
+    }
+    int maxEl, minEl, maxPos, minPos;
+    maxEl= *max_element(arr.begin(), arr.end());
+    minEl= *min_element(arr.begin(), arr.end());
+    maxPos = find(arr.begin(), arr.end(), maxEl)-arr.begin();
+    minPos = find(arr.rbegin(), arr.rend(), minEl)-arr.rbegin();
+    minPos = n-1-minPos;
+    int ans = maxPos+(n-1-minPos);
+    if(maxPos>minPos) ans--;
+    cout<<ans<<endl;
+    return 0;
 }
