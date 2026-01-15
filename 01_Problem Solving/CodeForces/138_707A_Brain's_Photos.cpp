@@ -12,33 +12,37 @@ using namespace std;
 #define ll long long
 #define srt(x) sort(x.begin(), x.end());
 #define rsrt(x) sort(x.rbegin(), x.rend());
-#define SUM(x) accumulate(x.begin(), x.end(), 0);
 #define vout(x) for(int i=0; i<x.size(); i++) cout << x[i] << " ";
 #define min_heap int, vector<int>, greater<int>
 #define min_heap_pair pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>
+
+bool colored(char ch) {
+	return ch=='C' or ch=='M' or ch=='Y';
+}
+
+bool check_colored(int n, int m, vector<vector<char>>&matrix) {
+	for(int i=0; i<n; i++) {
+		for(int j=0; j<m; j++) {
+			if(colored(matrix[i][j])) {
+				return true;
+			}
+		}
+	}
+	return false;
+}
 
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 
-	int t, n, k;
-	cin>>t;
-	while(t--) {
-		cin>>n>>k;
-		vector<int>a(n), b(n);
-		for (int i=0; i<n; i++) {
-			cin>>a[i];
+	int n, m;
+	cin>>n>>m;
+	vector<vector<char>>matrix(n, vector<char>(m));
+	for(int i=0; i<n; i++) {
+		for(int j=0; j<m; j++) {
+			cin>>matrix[i][j];
 		}
-		for (int i=0; i<n; i++) {
-			cin>>b[i];
-		}
-		srt(a);
-		rsrt(b);
-		for(int i=0; i<k; i++) {
-			if(a[i]<b[i]) swap(a[i], b[i]);
-		}
-		int sum = SUM(a);
-		cout<<sum<<endl;
 	}
+	cout<<(check_colored(n, m, matrix) ? "#Color" : "#Black&White")<<endl;
 	return 0;
 }

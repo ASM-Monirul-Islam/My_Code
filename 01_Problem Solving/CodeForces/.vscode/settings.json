@@ -8,7 +8,8 @@
 		"limits": "cpp",
 		"valarray": "cpp",
 		"array": "cpp",
-		"string": "cpp"
+		"string": "cpp",
+		"vector": "cpp"
 	},
 	"C_Cpp.errorSquiggles": "disabled"
 }

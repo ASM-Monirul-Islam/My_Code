@@ -17,28 +17,27 @@ using namespace std;
 #define min_heap int, vector<int>, greater<int>
 #define min_heap_pair pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>
 
+ll repeat(string s) {
+	ll first=0, second=1, rep=1, max_rep=INT_MIN, n = s.size();
+	while(first<n) {
+		if(s[first]==s[second]) {
+			rep++;
+		}else {
+			max_rep=max(max_rep, rep);
+			rep=1;
+			first=second;
+		}
+		second++;
+	}
+	return max_rep;
+}
+
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 
-	int t, n, k;
-	cin>>t;
-	while(t--) {
-		cin>>n>>k;
-		vector<int>a(n), b(n);
-		for (int i=0; i<n; i++) {
-			cin>>a[i];
-		}
-		for (int i=0; i<n; i++) {
-			cin>>b[i];
-		}
-		srt(a);
-		rsrt(b);
-		for(int i=0; i<k; i++) {
-			if(a[i]<b[i]) swap(a[i], b[i]);
-		}
-		int sum = SUM(a);
-		cout<<sum<<endl;
-	}
+	string s;
+	cin>>s;
+	cout<<repeat(s)<<endl;
 	return 0;
 }

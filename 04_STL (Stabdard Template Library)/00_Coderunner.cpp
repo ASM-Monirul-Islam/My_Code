@@ -21,24 +21,10 @@ int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 
-	int t, n, k;
-	cin>>t;
-	while(t--) {
-		cin>>n>>k;
-		vector<int>a(n), b(n);
-		for (int i=0; i<n; i++) {
-			cin>>a[i];
-		}
-		for (int i=0; i<n; i++) {
-			cin>>b[i];
-		}
-		srt(a);
-		rsrt(b);
-		for(int i=0; i<k; i++) {
-			if(a[i]<b[i]) swap(a[i], b[i]);
-		}
-		int sum = SUM(a);
-		cout<<sum<<endl;
+	vector<int>v = {6,3,1,5,2,3,2,2,4};
+	multiset<int>st(v.begin(), v.end());
+	for(auto i: st) {
+		cout<<i<<" ";
 	}
 	return 0;
 }

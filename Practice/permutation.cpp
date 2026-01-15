@@ -17,28 +17,29 @@ using namespace std;
 #define min_heap int, vector<int>, greater<int>
 #define min_heap_pair pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>
 
+vector<int>permutation(int n) {
+	if(n==1) return {n};
+	if(n<4) return {-1};
+	vector<int>v1, v2;
+	for(int i=1; i<=n; i++) {
+		if(i&1) v2.pub(i);
+		else v1.pub(i);
+	}
+	vector<int>v(v1);
+	v.insert(v.end(), v2.begin(), v2.end());
+	return v;
+}
+
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 
-	int t, n, k;
-	cin>>t;
-	while(t--) {
-		cin>>n>>k;
-		vector<int>a(n), b(n);
-		for (int i=0; i<n; i++) {
-			cin>>a[i];
-		}
-		for (int i=0; i<n; i++) {
-			cin>>b[i];
-		}
-		srt(a);
-		rsrt(b);
-		for(int i=0; i<k; i++) {
-			if(a[i]<b[i]) swap(a[i], b[i]);
-		}
-		int sum = SUM(a);
-		cout<<sum<<endl;
+	int n;
+	cin>>n;
+	vector<int>ans = permutation(n);
+	if(ans[0]== -1) cout<<"NO SOLUTION"<<endl;
+	else {
+		vout(ans);
 	}
 	return 0;
 }

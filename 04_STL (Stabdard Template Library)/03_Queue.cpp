@@ -18,7 +18,6 @@ int main() {
 
 	cout<<q.size()<<endl; //5
 
-
 	while(!q.empty()){
 		cout<<q.front()<<" "; //5 1 4 2 3
 		q.pop();

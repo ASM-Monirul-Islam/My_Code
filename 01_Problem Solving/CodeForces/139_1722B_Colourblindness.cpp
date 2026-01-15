@@ -21,24 +21,23 @@ int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 
-	int t, n, k;
+	int t, n;
 	cin>>t;
 	while(t--) {
-		cin>>n>>k;
-		vector<int>a(n), b(n);
-		for (int i=0; i<n; i++) {
-			cin>>a[i];
+		string s1, s2;
+		cin>>n;
+		cin>>s1;
+		cin>>s2;
+		for(int i=0; i<n; i++) {
+			if(s1[i]=='G') s1[i]='B';
+			if(s2[i]=='G') s2[i]='B';
+			if(s1[i] != s2[i]) {
+				cout<<"NO"<<endl;
+				goto nextCase;
+			}
 		}
-		for (int i=0; i<n; i++) {
-			cin>>b[i];
-		}
-		srt(a);
-		rsrt(b);
-		for(int i=0; i<k; i++) {
-			if(a[i]<b[i]) swap(a[i], b[i]);
-		}
-		int sum = SUM(a);
-		cout<<sum<<endl;
+		cout<<"YES"<<endl;
+		nextCase: ;
 	}
 	return 0;
 }

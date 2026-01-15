@@ -1,0 +1,1 @@
+{"name":"Local: repeatation","url":"c:\\Users\\HP\\Desktop\\My_Code\\Practice\\repeatation.cpp","tests":[{"id":1767799170153,"input":"ATTCGGGA","output":""},{"id":1767799514079,"input":"AAAAAAAAAA","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\HP\\Desktop\\My_Code\\Practice\\repeatation.cpp","group":"local","local":true}

@@ -12,33 +12,24 @@ using namespace std;
 #define ll long long
 #define srt(x) sort(x.begin(), x.end());
 #define rsrt(x) sort(x.rbegin(), x.rend());
-#define SUM(x) accumulate(x.begin(), x.end(), 0);
 #define vout(x) for(int i=0; i<x.size(); i++) cout << x[i] << " ";
 #define min_heap int, vector<int>, greater<int>
 #define min_heap_pair pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>
+
+int solution(int n) {
+	if(n==3) return n;
+	return 2;
+}
 
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 
-	int t, n, k;
+	int t, n;
 	cin>>t;
 	while(t--) {
-		cin>>n>>k;
-		vector<int>a(n), b(n);
-		for (int i=0; i<n; i++) {
-			cin>>a[i];
-		}
-		for (int i=0; i<n; i++) {
-			cin>>b[i];
-		}
-		srt(a);
-		rsrt(b);
-		for(int i=0; i<k; i++) {
-			if(a[i]<b[i]) swap(a[i], b[i]);
-		}
-		int sum = SUM(a);
-		cout<<sum<<endl;
+		cin>>n;
+		cout<<solution(n)<<endl;
 	}
 	return 0;
 }

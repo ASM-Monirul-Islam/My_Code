@@ -21,24 +21,15 @@ int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 
-	int t, n, k;
-	cin>>t;
-	while(t--) {
-		cin>>n>>k;
-		vector<int>a(n), b(n);
-		for (int i=0; i<n; i++) {
-			cin>>a[i];
-		}
-		for (int i=0; i<n; i++) {
-			cin>>b[i];
-		}
-		srt(a);
-		rsrt(b);
-		for(int i=0; i<k; i++) {
-			if(a[i]<b[i]) swap(a[i], b[i]);
-		}
-		int sum = SUM(a);
-		cout<<sum<<endl;
+	ll n;
+	cin>>n;
+	vector<ll>v(n-1);
+	ll total = (n*(n+1))/2;
+	ll not_total=0;
+	for(ll i=0; i<n-1; i++) {
+		cin>>v[i];
+		not_total+=v[i];
 	}
+	cout<<total-not_total<<endl;
 	return 0;
 }

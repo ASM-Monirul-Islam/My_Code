@@ -17,28 +17,26 @@ using namespace std;
 #define min_heap int, vector<int>, greater<int>
 #define min_heap_pair pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>
 
+bool possible(ll n) {
+	ll total = (n*(n+1))/2;
+	if(n%2==0) return true;
+	else return false;
+}
+
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 
-	int t, n, k;
-	cin>>t;
-	while(t--) {
-		cin>>n>>k;
-		vector<int>a(n), b(n);
-		for (int i=0; i<n; i++) {
-			cin>>a[i];
-		}
-		for (int i=0; i<n; i++) {
-			cin>>b[i];
-		}
-		srt(a);
-		rsrt(b);
-		for(int i=0; i<k; i++) {
-			if(a[i]<b[i]) swap(a[i], b[i]);
-		}
-		int sum = SUM(a);
-		cout<<sum<<endl;
+	ll n;
+	cin>>n;
+
+	if(!possible(n)) {
+		cout<<"NO"<<endl;
+		return 0;
 	}
+
+	cout<<"YES"<<endl;	
+
+	
 	return 0;
 }
